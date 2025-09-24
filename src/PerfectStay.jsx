@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Login from './Components/Login'
 
 export class PerfectStay extends Component {
   static propTypes = {}
@@ -6,12 +7,7 @@ export class PerfectStay extends Component {
   render() {
     return (
       <>
-        <h1>PerfectStay</h1>
-        <div>
-          <input type='text' placeholder='Email'></input>
-          <input type='text' placeholder='Password'></input>
-          <button>Login</button>
-        </div>
+        <Login />
       </>
     )
   }
