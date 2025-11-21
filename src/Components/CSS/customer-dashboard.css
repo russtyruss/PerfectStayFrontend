@@ -1,0 +1,278 @@
+
+
+
+/* === FORM ELEMENT RESET === */
+.customer-dashboard input,
+.customer-dashboard select,
+.customer-dashboard textarea
+{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2b2b8f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a.active {
+  color: #3b37ff;
+}
+
+/* === HERO === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  background: #fff;
+}
+
+.hero-text {
+  max-width: 45%;
+}
+
+.hero-text h1 {
+  color: #1b1b4f;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  color: #8a8a8a;
+  line-height: 1.6;
+}
+
+.hero-img img {
+  border-radius: 20px;
+  width: 400px;
+  height: auto;
+}
+
+/* === SEARCH SECTION === */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2rem 0;
+}
+
+/* === SEARCH BAR CONTAINER === */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #edf2ff;
+  padding: 1rem 1.25rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+}
+
+/* === INPUT GROUP === */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 200px;
+  max-width: 260px;
+}
+
+/* === LABEL === */
+.input-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+}
+
+/* === INPUTS AND SELECTS === */
+.input-group input[type="date"],
+.input-group select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px; /* manual padding after reset */
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* === SELECT DROPDOWN ARROW === */
+.input-group select {
+  padding-right: 40px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #667085 50%),
+    linear-gradient(135deg, #667085 50%, transparent 50%),
+    linear-gradient(#fff, #fff);
+  background-position:
+    calc(100% - 18px) center,
+    calc(100% - 13px) center,
+    100% 0;
+  background-size: 7px 7px, 7px 7px, 1px 1px;
+  background-repeat: no-repeat;
+
+  /* 🔥 THIS IS THE KEY FIX 🔥 */
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 44px; /* forces the same internal height as date input */
+  position: relative;
+  top: 0; /* keep zeroed to avoid Safari offset jumps */
+}
+
+/* === SEARCH BUTTON === */
+.search-btn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 44px;
+  align-self: flex-end;
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  background-color: #3b36c8;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 820px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    width: 90%;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .search-btn {
+    width: 100%;
+    height: 48px;
+    align-self: stretch;
+  }
+}
+
+/* === ROOMS SECTION === */
+.rooms {
+  padding: 2rem 4rem;
+  background-color: #fff;
+}
+
+.rooms h3 {
+  font-size: 1.5rem;
+  color: #1b1b4f;
+  margin-bottom: 1.5rem;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.room-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Overlay for readability */
+.room-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 1;
+}
+
+.price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #3b37ff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  z-index: 2;
+}
+
+.room-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.room-info h4 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.room-info p {
+  color: #ddd;
+  font-size: 0.85rem;
+}
+
+
